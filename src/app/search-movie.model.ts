@@ -1,7 +1,9 @@
-export interface SearchMovie {
-    identifier: string;
-    title: string;
-    type: string;
-    releaseYear: number;
-    fiche: string;
+export class SearchMovie {
+    constructor(
+    public identifier: string,
+    public title: string,
+    public type: string,
+    public releaseYear: number,
+    public fiche: string,
+    ) { }   
 }
