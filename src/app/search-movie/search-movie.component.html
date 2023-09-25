@@ -1,0 +1,32 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit">
+    <div>
+        <label for="identifier">Identifiant</label>
+        <input type="text" id="identifier" formControlName="identifier" />
+    </div>
+    <div>
+        <label for="title">Titre</label>
+        <input type="text" id="title" formControlName="title" />
+    </div>
+    <div>
+        <label for="type">Type</label>
+        <select id="type" formControlName="type">
+            <option value="film">Film</option>
+            <option value="series">Séries</option>
+            <option value="episode">Episode</option>
+        </select>
+    </div>
+    <div>
+        <label for="releaseYear">Année de sortie</label>
+        <input type="number" id="releaseYear" formControlName="releaseYear" />
+    </div>
+    <div *ngIf="searchForm.get('identifier')?.value">
+        <label for="fiche">Fiche</label>
+        <select id="fiche" formControlName="fiche">
+            <option value="Courte">Courte</option>
+            <option value="Complète">Complète</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Rechercher</button>
+    </div>
+</form>
